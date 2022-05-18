@@ -21,6 +21,7 @@ class Product extends Model
         'price',
         'tags',
         'categories_id',
+        'eatery_id'
     ];
 
     public function galleries()
@@ -31,5 +32,10 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(ProductCategory::class, 'categories_id', 'id');
+    }
+
+    public function eatery()
+    {
+        return $this->belongsTo(Eatery::class, 'eatery_id', 'id');
     }
 }
